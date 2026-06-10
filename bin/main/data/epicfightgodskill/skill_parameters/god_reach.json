@@ -1,0 +1,11 @@
+{
+  "attribute_modifiers": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "name": "godreach_stat",
+      "uuid": "e9f8a7b6-c5d4-3210-fedc-ba9876543210",
+      "operation": "multiply_total",
+      "amount": 0.5
+    }
+  ]
+}

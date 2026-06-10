@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Specification-Title: epicfightgodskill
+Specification-Vendor: ecrea
+Specification-Version: 1
+Implementation-Title: epicfightgodskill
+Implementation-Version: 1.0.0
+Implementation-Vendor: ecrea
+Implementation-Timestamp: 2026-06-01T17:13:58+0900
+MixinConfigs: epicfightgodskill.mixins.json
+

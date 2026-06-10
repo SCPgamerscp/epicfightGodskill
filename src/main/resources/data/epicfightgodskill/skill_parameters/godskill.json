@@ -1,0 +1,46 @@
+{
+  "attribute_modifiers": [
+    {
+      "attribute": "epicfight:staminar",
+      "name": "godskill_stat",
+      "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      "operation": "addition",
+      "amount": 20.0
+    },
+    {
+      "attribute": "epicfight:stamina_regen",
+      "name": "godskill_stat",
+      "uuid": "b1c2d3e4-f5a6-7890-abcd-ef1234567891",
+      "operation": "addition",
+      "amount": 20.0
+    },
+    {
+      "attribute": "minecraft:generic.max_health",
+      "name": "godskill_stat",
+      "uuid": "c1d2e3f4-a5b6-7890-abcd-ef1234567892",
+      "operation": "addition",
+      "amount": 20.0
+    },
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "name": "godskill_stat",
+      "uuid": "d1e2f3a4-b5c6-7890-abcd-ef1234567893",
+      "operation": "multiply_total",
+      "amount": 0.5
+    },
+    {
+      "attribute": "minecraft:generic.attack_speed",
+      "name": "godskill_stat",
+      "uuid": "e1f2a3b4-c5d6-7890-abcd-ef1234567894",
+      "operation": "multiply_total",
+      "amount": 0.5
+    },
+    {
+      "attribute": "epicfight:offhand_attack_speed",
+      "name": "godskill_stat",
+      "uuid": "f1a2b3c4-d5e6-7890-abcd-ef1234567895",
+      "operation": "multiply_total",
+      "amount": 0.5
+    }
+  ]
+}

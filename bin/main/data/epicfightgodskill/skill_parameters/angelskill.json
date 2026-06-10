@@ -1,0 +1,11 @@
+{
+  "attribute_modifiers": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "name": "angelskill_stat",
+      "uuid": "f1e2d3c4-b5a6-7890-abcd-ef1234567800",
+      "operation": "multiply_total",
+      "amount": 0.5
+    }
+  ]
+}

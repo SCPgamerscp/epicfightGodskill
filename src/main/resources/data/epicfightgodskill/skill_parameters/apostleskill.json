@@ -1,0 +1,11 @@
+{
+  "attribute_modifiers": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "name": "apostleskill_stat",
+      "uuid": "a9b8c7d6-e5f4-3210-abcd-ef9876543210",
+      "operation": "multiply_total",
+      "amount": 0.5
+    }
+  ]
+}
