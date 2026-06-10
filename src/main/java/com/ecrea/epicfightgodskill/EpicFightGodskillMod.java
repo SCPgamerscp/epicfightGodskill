@@ -3,6 +3,8 @@ package com.ecrea.epicfightgodskill;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.function.Consumer;
 
 import com.ecrea.epicfightgodskill.skill.AngelSkill;
@@ -41,6 +43,7 @@ import yesman.epicfight.world.capabilities.entitypatch.player.PlayerPatch;
 public class EpicFightGodskillMod {
 
     public static final String MODID = "epicfightgodskill";
+    private static final Logger LOGGER = LogManager.getLogger();
 
     /** PASSIVEスロット一覧 (PASSIVE1〜50 まとめて走査用) */
     public static final SkillSlot[] ALL_PASSIVE_SLOTS = new SkillSlot[]{
@@ -266,7 +269,9 @@ public class EpicFightGodskillMod {
             if (anim != null) {
                 patch.playAnimationSynchronized(anim, 0.0F);
             }
-        } catch (Exception ignored) {}
+        } catch (Exception e) {
+            LOGGER.error("Error during reflection in onLivingAttack", e);
+        }
 
         event.setCanceled(true);
     }

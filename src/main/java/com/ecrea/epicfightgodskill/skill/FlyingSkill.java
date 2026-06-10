@@ -1,6 +1,6 @@
 package com.ecrea.epicfightgodskill.skill;
 
-import net.minecraft.server.level.ServerPlayer;
+
 import yesman.epicfight.skill.Skill;
 import yesman.epicfight.skill.SkillBuilder;
 import yesman.epicfight.skill.SkillCategories;
