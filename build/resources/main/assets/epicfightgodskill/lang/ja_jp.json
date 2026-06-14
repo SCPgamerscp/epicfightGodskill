@@ -25,5 +25,8 @@
   "skill.epicfightgodskill.perfect_guard.consume.tooltip": "なし",
   "skill.epicfightgodskill.god_reach": "ゴッドリーチ（神のリーチ）",
   "skill.epicfightgodskill.god_reach.tooltip": "攻撃リーチ5倍・攻撃ダメージ+50%。2秒ごとに体力が3回復。",
-  "skill.epicfightgodskill.god_reach.consume.tooltip": "なし"
+  "skill.epicfightgodskill.god_reach.consume.tooltip": "なし",
+  "skill.epicfightgodskill.assassin": "暗殺者",
+  "skill.epicfightgodskill.assassin.tooltip": "攻撃ダメージ+50%。ダガーの「エビセレイト」の追加ダメージ上限を撤廃。2秒ごとに体力が3回復。",
+  "skill.epicfightgodskill.assassin.consume.tooltip": "なし"
 }

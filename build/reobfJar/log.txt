@@ -173,10 +173,12 @@ Writing Output: C:\Users\ecrea\Downloads\epicfight\epicfightGodskill\build\reobf
   com/ecrea/epicfightgodskill/mixin/
   com/ecrea/epicfightgodskill/mixin/MixinAttackAnimationReach.class
   com/ecrea/epicfightgodskill/mixin/MixinColliderReach.class
+  com/ecrea/epicfightgodskill/mixin/MixinExtraDamageInstance.class
   com/ecrea/epicfightgodskill/mixin/MixinLivingEntityPatchReach.class
   com/ecrea/epicfightgodskill/skill/
   com/ecrea/epicfightgodskill/skill/AngelSkill.class
   com/ecrea/epicfightgodskill/skill/ApostleSkill.class
+  com/ecrea/epicfightgodskill/skill/AssassinSkill.class
   com/ecrea/epicfightgodskill/skill/BlessingSkill.class
   com/ecrea/epicfightgodskill/skill/FlyingSkill.class
   com/ecrea/epicfightgodskill/skill/GodDodgeSkill.class
@@ -189,6 +191,7 @@ Writing Output: C:\Users\ecrea\Downloads\epicfight\epicfightGodskill\build\reobf
   data/epicfightgodskill/skill_parameters/
   data/epicfightgodskill/skill_parameters/angelskill.json
   data/epicfightgodskill/skill_parameters/apostleskill.json
+  data/epicfightgodskill/skill_parameters/assassin.json
   data/epicfightgodskill/skill_parameters/blessing.json
   data/epicfightgodskill/skill_parameters/flying.json
   data/epicfightgodskill/skill_parameters/god_dodge.json

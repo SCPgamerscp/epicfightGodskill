@@ -1,0 +1,11 @@
+{
+  "attribute_modifiers": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "name": "assassin_stat",
+      "uuid": "1a2b3c4d-5e6f-7081-92a3-b4c5d6e7f809",
+      "operation": "multiply_total",
+      "amount": 0.5
+    }
+  ]
+}

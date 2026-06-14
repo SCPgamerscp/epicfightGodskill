@@ -3,7 +3,8 @@
   "package": "com.ecrea.epicfightgodskill.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MixinColliderReach"
+    "MixinLivingEntityPatchReach",
+    "MixinExtraDamageInstance"
   ],
   "minVersion": "0.8"
 }

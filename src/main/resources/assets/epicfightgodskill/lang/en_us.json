@@ -25,5 +25,8 @@
   "skill.epicfightgodskill.perfect_guard.consume.tooltip": "None",
   "skill.epicfightgodskill.god_reach": "God Reach",
   "skill.epicfightgodskill.god_reach.tooltip": "Divine reach: 5x attack range, +50% attack damage. Restores 3 HP every 2 seconds.",
-  "skill.epicfightgodskill.god_reach.consume.tooltip": "None"
+  "skill.epicfightgodskill.god_reach.consume.tooltip": "None",
+  "skill.epicfightgodskill.assassin": "Assassin",
+  "skill.epicfightgodskill.assassin.tooltip": "+50% attack damage. Removes the damage cap on Dagger's Eviscerate lost-health bonus. Restores 3 HP every 2 seconds.",
+  "skill.epicfightgodskill.assassin.consume.tooltip": "None"
 }

@@ -7,6 +7,7 @@ import java.util.function.Consumer;
 
 import com.ecrea.epicfightgodskill.skill.AngelSkill;
 import com.ecrea.epicfightgodskill.skill.ApostleSkill;
+import com.ecrea.epicfightgodskill.skill.AssassinSkill;
 import com.ecrea.epicfightgodskill.skill.BlessingSkill;
 import com.ecrea.epicfightgodskill.skill.FlyingSkill;
 import com.ecrea.epicfightgodskill.skill.GodDodgeSkill;
@@ -72,6 +73,7 @@ public class EpicFightGodskillMod {
     public static Skill GODSTEPSKILL;
     public static Skill PERFECTGUARDSKILL;
     public static Skill GODREACHSKILL;
+    public static Skill ASSASSINSKILL;
 
     private static final Map<UUID, Integer> GODSKILL_HEAL_TICKS     = new HashMap<>();
     private static final Map<UUID, Integer> ANGEL_HEAL_TICKS        = new HashMap<>();
@@ -82,6 +84,7 @@ public class EpicFightGodskillMod {
     private static final Map<UUID, Integer> GODSTEP_HEAL_TICKS      = new HashMap<>();
     private static final Map<UUID, Integer> PERFECTGUARD_HEAL_TICKS = new HashMap<>();
     private static final Map<UUID, Integer> GODREACH_HEAL_TICKS     = new HashMap<>();
+    private static final Map<UUID, Integer> ASSASSIN_HEAL_TICKS     = new HashMap<>();
 
     private static final Map<UUID, Integer> GODDODGE_BOOST_TICKS = new HashMap<>();
     private static final Map<UUID, Integer> GODSTEP_BOOST_TICKS  = new HashMap<>();
@@ -114,6 +117,8 @@ public class EpicFightGodskillMod {
             "perfect_guard", PerfectGuardSkill::new,  PerfectGuardSkill.createPerfectGuardBuilder());
         GODREACHSKILL = worker.build(
             "god_reach",     GodReachSkill::new,      GodReachSkill.createGodReachBuilder());
+        ASSASSINSKILL = worker.build(
+            "assassin",      AssassinSkill::new,      AssassinSkill.createAssassinBuilder());
     }
 
     @SubscribeEvent
@@ -135,6 +140,7 @@ public class EpicFightGodskillMod {
         boolean hasGodStep      = false;
         boolean hasPerfectGuard = false;
         boolean hasGodReach     = false;
+        boolean hasAssassin     = false;
 
         // PASSIVE1〜50 を全走査
         for (SkillSlot slot : ALL_PASSIVE_SLOTS) {
@@ -144,6 +150,7 @@ public class EpicFightGodskillMod {
             if (c.getSkill() == ANGELSKILL)    hasAngel     = true;
             if (c.getSkill() == APOSTLESKILL)  hasApostle   = true;
             if (c.getSkill() == GODREACHSKILL) hasGodReach  = true;
+            if (c.getSkill() == ASSASSINSKILL) hasAssassin  = true;
         }
 
         // IDENTITY
@@ -203,6 +210,7 @@ public class EpicFightGodskillMod {
         healTick(player, uuid, hasGodStep,      GODSTEP_HEAL_TICKS,      3.0f);
         healTick(player, uuid, hasPerfectGuard, PERFECTGUARD_HEAL_TICKS, 3.0f);
         healTick(player, uuid, hasGodReach,     GODREACH_HEAL_TICKS,     3.0f);
+        healTick(player, uuid, hasAssassin,     ASSASSIN_HEAL_TICKS,     3.0f);
 
         // ── パーフェクトガード: ガード中の満腹度＋隠し満腹度回復 ──
         if (hasPerfectGuard) {
