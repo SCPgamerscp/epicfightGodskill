@@ -1,18 +1,16 @@
 package com.ecrea.epicfightgodskill.mixin;
 
 import com.ecrea.epicfightgodskill.EpicFightGodskillMod;
+import com.ecrea.epicfightgodskill.util.GodReachUtils;
 import com.ecrea.epicfightgodskill.ModSkillSlots;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import yesman.epicfight.api.animation.AnimationManager.AnimationAccessor;
 import yesman.epicfight.api.animation.types.AttackAnimation;
-import yesman.epicfight.api.animation.types.DynamicAnimation;
 import yesman.epicfight.api.animation.types.EntityState;
 import yesman.epicfight.api.utils.AttackResult;
 import yesman.epicfight.skill.SkillContainer;
@@ -35,37 +33,7 @@ import java.util.List;
 @Mixin(value = AttackAnimation.class, remap = false)
 public class MixinAttackAnimationReach {
 
-    private static final SkillSlot[] PASSIVE_SLOTS = new SkillSlot[]{
-        SkillSlots.PASSIVE1,     SkillSlots.PASSIVE2,     SkillSlots.PASSIVE3,
-        ModSkillSlots.PASSIVE4,  ModSkillSlots.PASSIVE5,  ModSkillSlots.PASSIVE6,
-        ModSkillSlots.PASSIVE7,  ModSkillSlots.PASSIVE8,  ModSkillSlots.PASSIVE9,
-        ModSkillSlots.PASSIVE10, ModSkillSlots.PASSIVE11, ModSkillSlots.PASSIVE12,
-        ModSkillSlots.PASSIVE13, ModSkillSlots.PASSIVE14, ModSkillSlots.PASSIVE15,
-        ModSkillSlots.PASSIVE16, ModSkillSlots.PASSIVE17, ModSkillSlots.PASSIVE18,
-        ModSkillSlots.PASSIVE19, ModSkillSlots.PASSIVE20, ModSkillSlots.PASSIVE21,
-        ModSkillSlots.PASSIVE22, ModSkillSlots.PASSIVE23, ModSkillSlots.PASSIVE24,
-        ModSkillSlots.PASSIVE25, ModSkillSlots.PASSIVE26, ModSkillSlots.PASSIVE27,
-        ModSkillSlots.PASSIVE28, ModSkillSlots.PASSIVE29, ModSkillSlots.PASSIVE30,
-        ModSkillSlots.PASSIVE31, ModSkillSlots.PASSIVE32, ModSkillSlots.PASSIVE33,
-        ModSkillSlots.PASSIVE34, ModSkillSlots.PASSIVE35, ModSkillSlots.PASSIVE36,
-        ModSkillSlots.PASSIVE37, ModSkillSlots.PASSIVE38, ModSkillSlots.PASSIVE39,
-        ModSkillSlots.PASSIVE40, ModSkillSlots.PASSIVE41, ModSkillSlots.PASSIVE42,
-        ModSkillSlots.PASSIVE43, ModSkillSlots.PASSIVE44, ModSkillSlots.PASSIVE45,
-        ModSkillSlots.PASSIVE46, ModSkillSlots.PASSIVE47, ModSkillSlots.PASSIVE48,
-        ModSkillSlots.PASSIVE49, ModSkillSlots.PASSIVE50
-    };
 
-    private static boolean hasGodReach(LivingEntityPatch<?> entitypatch) {
-        if (!(entitypatch instanceof PlayerPatch<?> playerPatch)) return false;
-        if (EpicFightGodskillMod.GODREACHSKILL == null) return false;
-        for (SkillSlot slot : PASSIVE_SLOTS) {
-            SkillContainer c = playerPatch.getSkill(slot);
-            if (c != null && c.getSkill() == EpicFightGodskillMod.GODREACHSKILL) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     /**
      * hurtCollidingEntities の後に追加処理を挿入。
@@ -82,7 +50,7 @@ public class MixinAttackAnimationReach {
             AttackAnimation.Phase phase,
             CallbackInfo ci
     ) {
-        if (!hasGodReach(entitypatch)) return;
+        if (!GodReachUtils.hasGodReach(entitypatch)) return;
         if (entitypatch.isLogicalClient()) return;
         // 攻撃フレーム中でなければ何もしない
         if (!prevState.attacking() && !state.attacking()) return;
