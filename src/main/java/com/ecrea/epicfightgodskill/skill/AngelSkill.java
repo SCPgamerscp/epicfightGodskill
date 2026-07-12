@@ -17,8 +17,6 @@ import yesman.epicfight.skill.passive.PassiveSkill;
  */
 public class AngelSkill extends PassiveSkill {
 
-    // PassiveSkill.createPassiveBuilder() は SkillBuilder<PassiveSkill> を返すため
-    // キャストして AngelSkill 用のビルダーとして扱う
     @SuppressWarnings("unchecked")
     public static SkillBuilder<AngelSkill> createAngelBuilder() {
         return (SkillBuilder<AngelSkill>)(SkillBuilder<?>)
@@ -28,16 +26,6 @@ public class AngelSkill extends PassiveSkill {
 
     public AngelSkill(SkillBuilder<? extends PassiveSkill> builder) {
         super(builder);
-    }
-
-    @Override
-    public void onInitiate(SkillContainer container) {
-        super.onInitiate(container);
-    }
-
-    @Override
-    public void onRemoved(SkillContainer container) {
-        super.onRemoved(container);
     }
 
     @Override

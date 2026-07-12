@@ -33,16 +33,6 @@ public class AssassinSkill extends PassiveSkill {
     }
 
     @Override
-    public void onInitiate(SkillContainer container) {
-        super.onInitiate(container);
-    }
-
-    @Override
-    public void onRemoved(SkillContainer container) {
-        super.onRemoved(container);
-    }
-
-    @Override
     public boolean shouldDraw(SkillContainer container) {
         return true;
     }
