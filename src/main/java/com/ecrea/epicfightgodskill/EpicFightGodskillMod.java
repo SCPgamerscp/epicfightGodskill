@@ -1,7 +1,9 @@
 package com.ecrea.epicfightgodskill;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.function.Consumer;
 
@@ -89,6 +91,8 @@ public class EpicFightGodskillMod {
     private static final Map<UUID, Integer> GODDODGE_BOOST_TICKS = new HashMap<>();
     private static final Map<UUID, Integer> GODSTEP_BOOST_TICKS  = new HashMap<>();
     private static final Map<UUID, Integer> PERFECTGUARD_FOOD_TICKS = new HashMap<>();
+
+    private static final Set<UUID> FLYING_GRANTED_PLAYERS = new HashSet<>();
 
     public EpicFightGodskillMod() {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -185,11 +189,15 @@ public class EpicFightGodskillMod {
 
         // ── 飛行維持 ─────────────────────────────────────────
         if (player instanceof ServerPlayer sp && !sp.isCreative() && !sp.isSpectator()) {
-            if (hasFlying && !sp.getAbilities().mayfly) {
-                sp.getAbilities().mayfly = true;
-                sp.getAbilities().flying = true;
-                sp.onUpdateAbilities();
-            } else if (!hasFlying && sp.getAbilities().mayfly) {
+            if (hasFlying) {
+                if (!sp.getAbilities().mayfly) {
+                    sp.getAbilities().mayfly = true;
+                    sp.getAbilities().flying = true;
+                    sp.onUpdateAbilities();
+                }
+                FLYING_GRANTED_PLAYERS.add(uuid);
+            } else if (FLYING_GRANTED_PLAYERS.remove(uuid)) {
+                // 当MODのスキルによって飛行権限が付与されていた場合のみ解除
                 sp.getAbilities().mayfly = false;
                 sp.getAbilities().flying = false;
                 sp.onUpdateAbilities();
