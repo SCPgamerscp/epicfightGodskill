@@ -26,7 +26,7 @@ public class GodStepSkill extends DodgeSkill {
     private static final UUID CAST_EVENT_UUID =
             UUID.fromString("a2b1c0d9-e8f7-b6c5-a4b3-c2d1e0f9a8b7");
 
-    public static final int BOOST_TICKS = 14;
+    public static final int BOOST_TICKS = 7;
 
     public static DodgeSkill.Builder createGodStepBuilder() {
         // ローカル変数で DodgeSkill.Builder 型を保持し setAnimations を呼ぶ
