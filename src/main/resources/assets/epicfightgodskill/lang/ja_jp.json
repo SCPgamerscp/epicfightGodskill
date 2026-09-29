@@ -30,6 +30,6 @@
   "skill.epicfightgodskill.assassin.tooltip": "攻撃ダメージ+50%。ダガーの「エビセレイト」の追加ダメージ上限を撤廃。2秒ごとに体力が3回復。",
   "skill.epicfightgodskill.assassin.consume.tooltip": "なし",
   "skill.epicfightgodskill.auto_dodge": "オートドッジ",
-  "skill.epicfightgodskill.auto_dodge.tooltip": "近接攻撃と飛び道具の被弾直前に横へ自動回避。成功時はダメージを無効化。スタミナ消費・クールダウンなし。",
+  "skill.epicfightgodskill.auto_dodge.tooltip": "攻撃力・攻撃速度・オフハンド攻撃速度+50%。近接攻撃と飛び道具の被弾直前に横へ自動回避し、ダメージを無効化。スタミナ消費・クールダウンなし。装備中は2秒ごとに体力3回復。",
   "skill.epicfightgodskill.auto_dodge.consume.tooltip": "なし"
 }
