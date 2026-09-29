@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 
 import com.ecrea.epicfightgodskill.skill.AngelSkill;
 import com.ecrea.epicfightgodskill.skill.ApostleSkill;
+import com.ecrea.epicfightgodskill.skill.AutoDodgeSkill;
 import com.ecrea.epicfightgodskill.skill.AssassinSkill;
 import com.ecrea.epicfightgodskill.skill.BlessingSkill;
 import com.ecrea.epicfightgodskill.skill.FlyingSkill;
@@ -76,6 +77,7 @@ public class EpicFightGodskillMod {
     public static Skill PERFECTGUARDSKILL;
     public static Skill GODREACHSKILL;
     public static Skill ASSASSINSKILL;
+    public static Skill AUTODODGESKILL;
 
     private static final Map<UUID, Integer> GODSKILL_HEAL_TICKS     = new HashMap<>();
     private static final Map<UUID, Integer> ANGEL_HEAL_TICKS        = new HashMap<>();
@@ -123,6 +125,8 @@ public class EpicFightGodskillMod {
             "god_reach",     GodReachSkill::new,      GodReachSkill.createGodReachBuilder());
         ASSASSINSKILL = worker.build(
             "assassin",      AssassinSkill::new,      AssassinSkill.createAssassinBuilder());
+        AUTODODGESKILL = worker.build(
+            "auto_dodge",    AutoDodgeSkill::new,    AutoDodgeSkill.createAutoDodgeBuilder());
     }
 
     @SubscribeEvent
