@@ -1,3 +1,26 @@
 {
-  "max_stacks": 1
+  "max_stacks": 1,
+  "attribute_modifiers": [
+    {
+      "attribute": "minecraft:generic.attack_damage",
+      "name": "auto_dodge_attack_damage",
+      "uuid": "738a91c2-4a86-4b57-97c2-88cb04da89e1",
+      "operation": "multiply_total",
+      "amount": 0.5
+    },
+    {
+      "attribute": "minecraft:generic.attack_speed",
+      "name": "auto_dodge_attack_speed",
+      "uuid": "30f57810-fb89-43de-ab60-0ef4205ac912",
+      "operation": "multiply_total",
+      "amount": 0.5
+    },
+    {
+      "attribute": "epicfight:offhand_attack_speed",
+      "name": "auto_dodge_offhand_attack_speed",
+      "uuid": "4dd202c3-3c36-4df5-8801-14f331bab2a7",
+      "operation": "multiply_total",
+      "amount": 0.5
+    }
+  ]
 }

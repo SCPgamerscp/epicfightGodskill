@@ -89,6 +89,7 @@ public class EpicFightGodskillMod {
     private static final Map<UUID, Integer> PERFECTGUARD_HEAL_TICKS = new HashMap<>();
     private static final Map<UUID, Integer> GODREACH_HEAL_TICKS     = new HashMap<>();
     private static final Map<UUID, Integer> ASSASSIN_HEAL_TICKS     = new HashMap<>();
+    private static final Map<UUID, Integer> AUTODODGE_HEAL_TICKS    = new HashMap<>();
 
     private static final Map<UUID, Integer> GODDODGE_BOOST_TICKS = new HashMap<>();
     private static final Map<UUID, Integer> GODSTEP_BOOST_TICKS  = new HashMap<>();
@@ -149,6 +150,7 @@ public class EpicFightGodskillMod {
         boolean hasPerfectGuard = false;
         boolean hasGodReach     = false;
         boolean hasAssassin     = false;
+        boolean hasAutoDodge    = false;
 
         // PASSIVE1〜50 を全走査
         for (SkillSlot slot : ALL_PASSIVE_SLOTS) {
@@ -159,6 +161,7 @@ public class EpicFightGodskillMod {
             if (c.getSkill() == APOSTLESKILL)  hasApostle   = true;
             if (c.getSkill() == GODREACHSKILL) hasGodReach  = true;
             if (c.getSkill() == ASSASSINSKILL) hasAssassin  = true;
+            if (c.getSkill() == AUTODODGESKILL) hasAutoDodge = true;
         }
 
         // IDENTITY
@@ -223,6 +226,7 @@ public class EpicFightGodskillMod {
         healTick(player, uuid, hasPerfectGuard, PERFECTGUARD_HEAL_TICKS, 3.0f);
         healTick(player, uuid, hasGodReach,     GODREACH_HEAL_TICKS,     3.0f);
         healTick(player, uuid, hasAssassin,     ASSASSIN_HEAL_TICKS,     3.0f);
+        healTick(player, uuid, hasAutoDodge,    AUTODODGE_HEAL_TICKS,    3.0f);
 
         // ── パーフェクトガード: ガード中の満腹度＋隠し満腹度回復 ──
         if (hasPerfectGuard) {
