@@ -28,5 +28,8 @@
   "skill.epicfightgodskill.god_reach.consume.tooltip": "None",
   "skill.epicfightgodskill.assassin": "Assassin",
   "skill.epicfightgodskill.assassin.tooltip": "+50% attack damage. Removes the damage cap on Dagger's Eviscerate lost-health bonus. Restores 3 HP every 2 seconds.",
-  "skill.epicfightgodskill.assassin.consume.tooltip": "None"
+  "skill.epicfightgodskill.assassin.consume.tooltip": "None",
+  "skill.epicfightgodskill.auto_dodge": "Auto Dodge",
+  "skill.epicfightgodskill.auto_dodge.tooltip": "Automatically sidesteps incoming melee and projectile hits, negating damage. No stamina cost or cooldown.",
+  "skill.epicfightgodskill.auto_dodge.consume.tooltip": "None"
 }
