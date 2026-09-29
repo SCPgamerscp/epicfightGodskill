@@ -77,14 +77,18 @@ public class AutoDodgeSkill extends PassiveSkill {
         if (origin == null) return;
 
         Vec3 incoming = player.position().subtract(origin);
-        Vec3 left = new Vec3(-incoming.z, 0.0D, incoming.x);
-        if (left.lengthSqr() < 1.0E-6D) {
+        Vec3 side = new Vec3(-incoming.z, 0.0D, incoming.x);
+        if (side.lengthSqr() < 1.0E-6D) {
             Vec3 facing = player.getLookAngle();
-            left = new Vec3(-facing.z, 0.0D, facing.x);
+            side = new Vec3(-facing.z, 0.0D, facing.x);
         }
-        left = left.normalize();
-        Vec3 direction = canStep(player, left) ? left :
-                canStep(player, left.scale(-1.0D)) ? left.scale(-1.0D) : null;
+        side = side.normalize();
+        Vec3 opposite = side.scale(-1.0D);
+        boolean sideOpen = canStep(player, side);
+        boolean oppositeOpen = canStep(player, opposite);
+        Vec3 direction = sideOpen && oppositeOpen
+                ? (player.getRandom().nextBoolean() ? side : opposite)
+                : sideOpen ? side : oppositeOpen ? opposite : null;
         if (direction == null) return;
 
         Vec3 facing = player.getLookAngle();
